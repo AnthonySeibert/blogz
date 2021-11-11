@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{title}}</title>
+        <nav>
+            <a href="http://127.0.0.1:5000/blog">Main Blog Page</a>
+            <a href="http://127.0.0.1:5000/add-blog">Add Blog Page</a>
+        </nav>
+        <style>
+            #error{
+                color: red;
+                font-style: italic;
+            }
+        </style>
+    </head>
+    
+<body>
+
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
