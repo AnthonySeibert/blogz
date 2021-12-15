@@ -3,11 +3,13 @@
     <head>
         <title>{{title}}</title>
         <nav>
-            <a href="http://127.0.0.1:5000/blog">Main Blog Page</a>
-            <a href="http://127.0.0.1:5000/add-blog">Add Blog Page</a>
-        </nav>
+            <a href="http://127.0.0.1:5000/login">Login</a>
+            <a href="http://127.0.0.1:5000/">Home</a>
+            <a href="http://127.0.0.1:5000/blog">Blogs</a>
+            <a href="http://127.0.0.1:5000/newpost">Make a New Post</a>
+            <a href="http://127.0.0.1:5000/logout">Logout</a>
         <style>
-            #error{
+            .error{
                 color: red;
                 font-style: italic;
             }
@@ -15,6 +17,14 @@
     </head>
     
 <body>
+
+    {% with messages = get_flashed_messages(with_categories=True) %}
+    <ul>
+    {% for category,message in messages %}
+        <li class="{{category}}">{{message}}</li>
+    {% endfor %}
+    </ul>
+    {% endwith %}
 
     {% block content %}
     {% endblock %}
